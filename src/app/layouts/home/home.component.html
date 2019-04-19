@@ -1,0 +1,18 @@
+<app-carousel #myCarousel [inputs]="carouselTileConfig" [dataSource]="carouselTileItems$ | async">
+  <carousel-tile *CarouselDef="let item; let i = index; let ani = animate" [@slider]="ani">
+    <div class="tile" [style.background]="'url('+item+')'">
+      <h1>{{carouselTiles[i % 7][0]}}</h1>
+    </div>
+  </carousel-tile>
+
+  <button CarouselPrev class="leftRs" [style.opacity]="myCarousel.isFirst ? 0.5:1">&#x27AC;</button>
+  <button CarouselNext class="rightRs" [style.opacity]="myCarousel.isLast ? 0.5:1">&#x27AB;</button>
+
+  <ul class="myPoint" CarouselPoint>
+    <li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint"
+        (click)="myCarousel.moveTo(i)"></li>
+  </ul>
+</app-carousel>
+
+<!--{{ (carouselTileItems$ | async)?.length }}-->
+<app-gallery></app-gallery>

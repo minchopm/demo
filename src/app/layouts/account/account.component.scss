@@ -1,0 +1,22 @@
+:host {
+  & > div {
+    margin: 10px;
+  }
+}
+
+.profile {
+  flex: 1 1 auto;
+  form, form > * {
+    width: 100%;
+  }
+}
+
+card-holder {
+  max-width: 400px !important;
+}
+
+.header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+

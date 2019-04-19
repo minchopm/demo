@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$my-app-primary: mat-palette($mat-grey, 100, 900, A100);
+$my-app-accent: mat-palette($mat-pink, 500, 900, A100);
+$my-app-warn: mat-palette($mat-deep-orange);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+@include angular-material-theme($my-app-theme);
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.ngx-gallery-image-size-cover .ngx-gallery-image {
+  -webkit-background-size: 100% auto !important;
+  background-size: 100% auto !important;
+}
+
+ngx-gallery {
+  width: 100% !important;
+  height: 0 !important;
+  padding: 13% 0;
+  position: relative;
+}
+
+.ngx-gallery-layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.ngx-gallery-image-text {
+  background: transparent !important;
+  bottom: 1vh;
+}
+
+.delete {
+  cursor: pointer !important;
+  padding: 0 !important;
+}

@@ -1,0 +1,11 @@
+<div #carousel class="carousel">
+  <div #touchContainer class="carousel-touch-container">
+    <div #carouselItemsContainer class="carousel-items">
+      <ng-container CarouselOutlet></ng-container>
+    </div>
+  </div>
+  <div class="carouselclearFix"></div>
+  <ng-content select="[CarouselPrev]"></ng-content>
+  <ng-content select="[CarouselNext]"></ng-content>
+</div>
+<ng-content select="[CarouselPoint]"></ng-content>

@@ -1,0 +1,17 @@
+:host {
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content auto;
+  .menu-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+    position: sticky;
+    top: 0;
+    display: block;
+    z-index: 2;
+  }
+  img {
+    height: 40px;
+  }
+}

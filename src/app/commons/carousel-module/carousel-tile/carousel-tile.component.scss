@@ -1,0 +1,21 @@
+:host {
+  @media (max-width:767px){
+    padding: 25% 0px;
+  }
+  @media (min-width:768px){padding: 18% 0px;}
+  @media (min-width:992px){padding: 12% 0px;}
+  @media (min-width:1200px){padding: 9% 0px;}
+  box-sizing: border-box;
+  height: 0;
+  //padding: 30%;
+  position: relative;
+}
+
+.tile {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  position: absolute;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  top: 10px;
+  left: 10px;
+}

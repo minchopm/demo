@@ -1,0 +1,9 @@
+<h3>{{sharedService.title}}</h3>
+<span>
+  {{sharedService.message}}
+</span>
+<button mat-icon-button class="dismiss-btn" (click)="dismissSnackBar()"
+        [class.mat-elevation-z4]="true"
+        matTooltip="Close">
+  <mat-icon>close</mat-icon>
+</button>

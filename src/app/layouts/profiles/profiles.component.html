@@ -1,0 +1,48 @@
+<h2>Periodic Elements</h2>
+<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8"
+           cdkDropList
+           [class.isMobile]="isMobile"
+           matSort (matSortChange)="sortData($event)"
+           [cdkDropListData]="dataSource"
+           (cdkDropListDropped)="drop($event)">
+
+  <!-- Username Column -->
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <span class="mobile-label">Username</span>
+      {{element.username}}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Email:</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <span class="mobile-label">Email</span>
+      {{element.email}}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Password Column -->
+  <ng-container matColumnDef="password">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Password</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <span class="mobile-label">Password:</span>
+      {{element.password}}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Subscribe Column -->
+  <ng-container matColumnDef="subscribe">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Subscribe</mat-header-cell>
+    <mat-cell *matCellDef="let element" fxLayoutAlign="space-between center">
+      <span class="mobile-label">Subscribe:</span>
+      {{element.subscribe}}
+      <mat-icon class="delete" (click)="removeProfile(element)">delete_forever</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></mat-row>
+</mat-table>
