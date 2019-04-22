@@ -7,9 +7,10 @@ import { NotificationComponent } from '../layouts/notification/notification.comp
   providedIn: 'root'
 })
 export class ProfileService {
-  profiles: any = [];
+  profiles: any;
 
   constructor(private storageService: LocalStorageService, public sharedService: SharedService) {
+    this.profiles = this.getProfiles();
   }
 
   getProfiles() {

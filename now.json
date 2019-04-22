@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "name": "Neterra",
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@now/static"
+    },
+    {
+      "src": "*.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/list",
+      "headers": {
+        "cache-control": "s-maxage=1000"
+      },
+      "dest": "/index.html"
+    },
+    {
+      "src": "/profiles",
+      "headers": {
+        "cache-control": "s-maxage=1000"
+      },
+      "dest": "/index.html"
+    },
+    {
+      "src": "/account",
+      "headers": {
+        "cache-control": "s-maxage=1000"
+      },
+      "dest": "/index.html"
+    }
+  ]
+}
